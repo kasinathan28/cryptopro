@@ -1,0 +1,27 @@
+.main{
+    width: 600px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.h1{
+    margin-top: 150px;
+    font-size: 60px;
+    text-wrap: balance;
+    padding: 20px;
+    color: rgb(13,19,59);
+    text-transform: capitalize;
+}
+
+.div1{
+    width: 400px;
+    justify-content: center;
+    display: flex;
+    float: left;
+    margin-right: auto;
+    margin-left: 30px;
+    font-size:24px;
+    margin-top: -40px;
+}

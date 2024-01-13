@@ -1,18 +1,19 @@
-.container{
-    width: auto;
-    height: 87vh;
-    background: rgb(252,252,238);
-}
-
-.contents{
-    padding-top: 40px;
+.container {
     width: 100%;
+    height: auto;
+    background: rgb(252, 252, 238);
     display: flex;
-    height:auto;
-    /* background: #000; */
+    justify-content: center;
+  }
+  
+  .contents {
+    padding: 40px;
+    width: 60%;
+    display: flex;
+    height: auto;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    align-items: center;
     padding-left: 90px;
     padding-bottom: 40px;
-}
-
+  }
+  
