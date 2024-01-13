@@ -1,0 +1,29 @@
+crypto
+------src
+	------modules
+		------app
+			------components
+				------cards
+				------images
+				------navbar
+				------roundButton
+		------auth
+			------components
+				------LoginForm
+					------loginForm.jsx
+			------views
+				------login.tsx
+			------services
+				------loginService.tsx
+		------dashboard
+			------components
+			------views
+			------services
+		------mainContainer
+	------pages
+		------_app.tsx
+		------_document.tsx
+		------index.tsx
+	------styles
+		------global.css
+.env
