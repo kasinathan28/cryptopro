@@ -30,3 +30,17 @@
     margin: 0 60px 0 auto; 
     justify-content: center;
 }
+
+
+.icon{
+    transition: 0.3s ease all;
+}
+.icon:hover{
+    transform: rotate(45deg);
+}
+
+.backButton{
+    color: #fff;
+    margin-left: 30px;
+    margin-right: -100px;
+}

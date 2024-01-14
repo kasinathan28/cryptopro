@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./quatue.module.css";
+import RoundButton from "@/modules/app/components/roundbutton/roundButton";
+import BuyButton from "@/modules/app/components/buyButton/buyButton";
 
 export default function Quatue() {
   return (
@@ -12,6 +14,7 @@ export default function Quatue() {
         <div className={style.div1}>
           <h2>Analyze the graph and buy as you need</h2>
         </div>
+        <BuyButton></BuyButton>
       </div>
       
     </div>

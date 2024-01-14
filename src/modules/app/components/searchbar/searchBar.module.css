@@ -1,0 +1,14 @@
+.input {
+    width: 200px;
+    padding: 20px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    outline: none; /* Ensure that the outline is also removed on focus */
+}
+
+.input:focus,
+.input:active {
+    border: none;
+}

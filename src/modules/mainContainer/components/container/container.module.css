@@ -1,9 +1,11 @@
 .container {
     width: 100%;
+    min-height:832px;
     height: auto;
     background: rgb(252, 252, 238);
     display: flex;
     justify-content: center;
+    position: fixed;
   }
   
   .contents {
@@ -15,5 +17,6 @@
     align-items: center;
     padding-left: 90px;
     padding-bottom: 40px;
+    
   }
   

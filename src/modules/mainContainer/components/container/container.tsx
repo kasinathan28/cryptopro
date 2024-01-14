@@ -1,46 +1,46 @@
+// Container.tsx
+
 import React, { useEffect, useState } from "react";
 import style from "./container.module.css";
 import Card from "@/modules/app/components/cards/card";
 import Quatue from "../quatue/quatue";
-
-interface Coin {
-  id: string;
-  name: string;
-  symbol: string;
-  price: string;
-}
+import Loader from "@/modules/app/components/loader/loader";
+import { fetchCoinDetails, Coin } from "../../services/coinService";
 
 export default function Container() {
-  const [coinDetails, setCoinDetails] = useState<Coin[]>([]); // Explicitly specify the type as Coin[]
+  const [coinDetails, setCoinDetails] = useState<Coin[]>([]);
 
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  
-    const fetchCoinDetails = async () => {
+
+    const fetchCoins = async () => {
       try {
         if (!apiUrl) {
           console.error("API URL is not defined.");
           return;
         }
-  
-        const response = await fetch(apiUrl);
-        const { data } = await response.json();
+
+        const data = await fetchCoinDetails(apiUrl);
         setCoinDetails(data);
       } catch (error) {
         console.error("Error fetching coin details:", error);
       }
     };
-  
-    fetchCoinDetails();
-  }, []); // Empty dependency array means the effect runs once on component mount
-  
+
+    fetchCoins();
+  }, []);
+
   return (
     <div>
       <div className={style.container}>
         <div className={style.contents}>
-          {coinDetails.map((coin) => (
-            <Card key={coin.id} coin={coin} />
-          ))}
+          {coinDetails && coinDetails.length > 0 ? (
+            coinDetails.map((coin) => (
+              <Card key={coin.id} coin={coin} />
+            ))
+          ) : (
+            <Loader></Loader>
+          )}
         </div>
         <div>
           <Quatue></Quatue>

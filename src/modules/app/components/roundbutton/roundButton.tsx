@@ -1,15 +1,19 @@
+// roundButton.tsx
+
 import React from 'react';
-import style from "./roundButton.module.css"
+import styles from './roundButton.module.css';
+
 interface RoundButtonProps {
   buttonText: string;
+  onClick?: () => void; // Optional onClick prop
 }
 
-function RoundButton({ buttonText }: RoundButtonProps) {
+const RoundButton: React.FC<RoundButtonProps> = ({ buttonText, onClick }) => {
   return (
-    <div>
-      <button className={style.button}>{buttonText}</button>
-    </div>
+    <button className={styles.button} onClick={onClick}>
+      {buttonText}
+    </button>
   );
-}
+};
 
 export default RoundButton;
