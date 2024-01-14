@@ -1,5 +1,3 @@
-  // coinService.tsx
-
   export interface Coin {
       id: string;
       name: string;
@@ -8,7 +6,7 @@
       large: string;
       sparkline: string;
     }
-    
+
     export const fetchCoinDetails = async (apiUrl: string): Promise<Coin[]> => {
       console.log("coinService called");
       
@@ -23,4 +21,6 @@
         throw error;
       }
     };
+    
+
     

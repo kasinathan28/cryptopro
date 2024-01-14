@@ -14,7 +14,7 @@ const CoinDetailsTable: React.FC<CoinDetailsTableProps> = ({ coinDetails }) => {
         <div className={style.searchbar}>
             <SearchBar></SearchBar>
         </div>
-      <h2 className={style.h2}>Coin Details</h2>
+      <h2 className={style.h2}>Treding Coins</h2>
       <table className={style.coin_details_table}>
         <thead>
           <tr>

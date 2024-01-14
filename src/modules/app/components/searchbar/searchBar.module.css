@@ -12,3 +12,17 @@
 .input:active {
     border: none;
 }
+
+
+.button{
+    padding: 10px;
+    border: none;
+    background: #ccc;
+    border-radius: 20px;
+    transition: 0.3s ease all;
+}
+
+.button:hover{
+    background: #444044;
+    color: #fff;
+}

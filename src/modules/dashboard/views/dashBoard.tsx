@@ -18,7 +18,6 @@ export default function DashBoard() {
           console.error("API URL is not defined.");
           return;
         }
-
         const data = await fetchCoinDetails(apiUrl);
         setCoinDetails(data);
       } catch (error) {

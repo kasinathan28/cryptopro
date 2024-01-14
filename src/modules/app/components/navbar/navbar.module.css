@@ -38,6 +38,9 @@
 .icon:hover{
     transform: rotate(45deg);
 }
+.icon:active{
+    transform: rotate(45deg);
+}
 
 .backButton{
     color: #fff;

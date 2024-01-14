@@ -20,7 +20,7 @@ export default function Container() {
           return;
         }
 
-        const data = await fetchCoinDetails(apiUrl);
+        const data = await fetchCoinDetails(apiUrl );
         setCoinDetails(data);
       } catch (error) {
         console.error("Error fetching coin details:", error);

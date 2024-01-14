@@ -1,14 +1,13 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
-import style from "./loginForm.module.css";
-import { useRouter } from "next/router";
-
-const VALID_USERNAME = "user";
-const VALID_PASSWORD = "pass";
+// components/LoginForm.tsx
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import style from './loginForm.module.css';
+import { useRouter } from 'next/router';
+import { login, LoginResponse } from '../../services/authService';
 
 export default function LoginForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const router = useRouter();
 
@@ -20,19 +19,26 @@ export default function LoginForm() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-      console.log("Login successful");
-      router.push("/dashboard");
-    } else {
-      setError("Invalid username or password");
+    try {
+      const response: LoginResponse = await login(username, password);
+
+      if (response.success) {
+        console.log('Login successful');
+        router.push('/dashboard');
+      } else {
+        setError(response.error || 'Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('An unexpected error occurred');
     }
   };
 
   const handleSignup = () => {
-    router.push("/signup");
+    router.push('/signup');
   };
 
   return (
