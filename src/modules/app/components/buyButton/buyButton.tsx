@@ -4,7 +4,7 @@ function BuyButton() {
   return (
     <div>
         <div>
-            <button type="button" className={style.button}>Buy Now</button>
+            <button type="button" className={style.button}>Explore More</button>
         </div>
     </div>
   )
