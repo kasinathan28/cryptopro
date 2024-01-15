@@ -6,9 +6,17 @@ import Card from "@/modules/app/components/cards/card";
 import Quatue from "../quatue/quatue";
 import Loader from "@/modules/app/components/loader/loader";
 import { fetchCoinDetails, Coin } from "../../services/coinService";
+import socket from "@/modules/app/components/websocket/webSocket";
 
 export default function Container() {
   const [coinDetails, setCoinDetails] = useState<Coin[]>([]);
+
+  useEffect(() => {
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
 
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -19,7 +27,6 @@ export default function Container() {
           console.error("API URL is not defined.");
           return;
         }
-
         const data = await fetchCoinDetails(apiUrl );
         setCoinDetails(data);
       } catch (error) {
@@ -30,6 +37,7 @@ export default function Container() {
     fetchCoins();
   }, []);
 
+  
   return (
     <div>
       <div className={style.container}>

@@ -1,6 +1,7 @@
 .main{
     width: 100%;
-    height: auto;
+    overflow: auto;
+    height: 100%;
     display: flex;
     align-items: center;
     background: #000;
