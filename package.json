@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.5",
+    "js-cookie": "^3.0.5",
     "next": "^14.0.4",
     "node-cron": "^3.0.3",
     "react": "^18.2.0",
@@ -21,6 +22,7 @@
     "ws": "^8.16.0"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

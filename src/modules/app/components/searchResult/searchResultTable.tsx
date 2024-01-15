@@ -1,4 +1,3 @@
-// SearchResultTable.tsx
 import React from "react";
 import style from "./searchResultTable.module.css";
 import Loader from "../loader/loader";
@@ -20,6 +19,10 @@ interface SearchResultTableProps {
 const SearchResultTable: React.FC<SearchResultTableProps> = ({
   searchResults,
 }) => {
+  const handleAddToFavorites = (coinId: string) => {
+    console.log(`Add coin ${coinId} to favorites`);
+  };
+
   return (
     <div className={style.searchResultContainer}>
       <h2 className={style.h2}>Search Results</h2>
@@ -51,6 +54,7 @@ const SearchResultTable: React.FC<SearchResultTableProps> = ({
                     size="2x"
                     color="fff"
                     icon={faHeart}
+                    onClick={() => handleAddToFavorites(coin.id)}
                   />
                 </td>
               </tr>

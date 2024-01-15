@@ -21,11 +21,13 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+  
     try {
       const response: LoginResponse = await login(username, password);
-
+  
       if (response.success) {
+        window.localStorage.setItem('username', username);
+  
         console.log('Login successful');
         router.push('/dashboard');
       } else {
@@ -36,6 +38,7 @@ export default function LoginForm() {
       setError('An unexpected error occurred');
     }
   };
+  
 
   const handleSignup = () => {
     router.push('/signup');
