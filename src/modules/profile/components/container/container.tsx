@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import style from "./container.module.css";
 import { fetchFavoriteCoins, Coin } from "@/modules/profile/services/fetchFav";
 import { removeFavoriteCoin } from "../../services/removeFav";
-import { useRouter } from "next/router";
+import Image from "next/image";
+import Avatar from "../assets/avatar.png";
 
 export default function Container() {
   const [username, setUsername] = useState("");
@@ -50,7 +51,7 @@ export default function Container() {
             <h1>Welcome back, {username}!</h1>
           </div>
           <div className={style.avatar}>
-            
+            <Image src={Avatar} alt="avatar"/>
           </div>
         </div>
         <div className={style.child2}>

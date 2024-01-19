@@ -5,7 +5,8 @@ import Quatue from "../quatue/quatue";
 import Loader from "@/modules/app/components/loader/loader";
 import { fetchCoinDetails, Coin } from "../../services/coinService";
 import socket from "@/modules/app/components/websocket/webSocket";
-import axios, { AxiosError } from "axios"; // Import Axios
+import { addCoinToDatabase } from "../../services/addCoin";
+import { AxiosError } from "axios";
 
 export default function Container() {
   const [coinDetails, setCoinDetails] = useState<Coin[]>([]);
@@ -32,14 +33,11 @@ export default function Container() {
         setCoinDetails(data);
         console.log("Fetched data successfully:", data);
 
-        // Call the addCoin endpoint for each coin in the fetched data
         data.forEach(async (coin) => {
           try {
-            const addCoinUrl = "http://localhost:5000/addCoin";
-            console.log("api call:", addCoinUrl, coin);
+            await addCoinToDatabase(coin);
+            console.log(coin);
             
-            await axios.post(addCoinUrl, coin);
-            console.log("Coin details added to the database:", coin);
           } catch (error) {
             console.error("Error adding coin details to the database:", error);
           }
