@@ -1,3 +1,4 @@
+// components/Navbar.tsx
 import React from 'react';
 import style from "./navbar.module.css";
 import Logo from "../images/logo.png";
@@ -16,6 +17,9 @@ export default function Navbar() {
     router.push('/signup');
   }
 
+  const isSignup = router.pathname.includes("/signup");
+  const isLogin = router.pathname.includes("/login");
+
 
   return (
     <div className={style.navbar}>
@@ -24,8 +28,9 @@ export default function Navbar() {
       <div className={style.bar}></div>
 
       <div className={style.right}>
-        <RoundButton buttonText="LOGIN" onClick={handleLogin} />
-        <RoundButton buttonText="SignUP"  onClick={handleSignup}/>
+       {!isLogin &&  <RoundButton buttonText="LOGIN" onClick={handleLogin} />} 
+        
+        {!isSignup && <RoundButton buttonText="SIGNUP" onClick={handleSignup} />}
       </div>
     </div>
   );

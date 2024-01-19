@@ -18,6 +18,7 @@ export default function Navbar1() {
   
 }
 
+
   const isDashBoard = router.pathname.includes("/dashboard");
   const isProfile = router.pathname.includes("/profile");
 

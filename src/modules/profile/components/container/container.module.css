@@ -30,13 +30,52 @@
   .child2 {
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     height: 100%;
+    flex-direction: column;
   }
   
   .child2 h1 {
+    margin: 30px;
     font-size: 24px;
     color: #333;
+    top: 0;
+  
   }
   
+  /* Add these styles at the end of your existing CSS file or in a separate file */
+
+.child2 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.child2 th, .child2 td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.child2 th {
+  background-color: #f2f2f2;
+}
+
+.child2 button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.child2 button:hover {
+  background-color: #d32f2f;
+}
+
+/* Add this style to your CSS */
+.coinImage {
+  max-width: 50px; /* Adjust the width as needed */
+  max-height: 50px; /* Adjust the height as needed */
+}

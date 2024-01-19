@@ -1,6 +1,6 @@
 // CoinDetailsTable.tsx
 import React from 'react';
-import { Coin } from '../../../mainContainer/services/coinService'; // Adjust the import path based on your project structure
+import { Coin } from '../../../mainContainer/services/coinService';
 import style from './coindetails.module.css';
 import SearchBar from '@/modules/app/components/searchbar/searchBar';
 
@@ -24,7 +24,6 @@ const CoinDetailsTable: React.FC<CoinDetailsTableProps> = ({ coinDetails }) => {
             <th>Name</th>
             <th>Symbol</th>
             <th>Price</th>
-            
           </tr>
         </thead>
         <tbody>

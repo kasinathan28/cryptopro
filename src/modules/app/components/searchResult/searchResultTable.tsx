@@ -1,3 +1,5 @@
+// SearchResultTable.js
+
 import React from "react";
 import style from "./searchResultTable.module.css";
 import Loader from "../loader/loader";
@@ -19,8 +21,28 @@ interface SearchResultTableProps {
 const SearchResultTable: React.FC<SearchResultTableProps> = ({
   searchResults,
 }) => {
-  const handleAddToFavorites = (coinId: string) => {
-    console.log(`Add coin ${coinId} to favorites`);
+  const username = window.localStorage.getItem("username");
+
+  const handleAddToFavorites = async (coinId: string, coinLarge: string) => {
+    try {
+      console.log("Adding to favorites:", { username, coinId, coinLarge });
+
+      const response = await fetch('http://localhost:5000/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, coinId, coinLarge }),
+      });
+
+      if (response.ok) {
+        console.log(`Coin ${coinId} added to favorites`);
+      } else {
+        console.error('Failed to add coin to favorites');
+      }
+    } catch (error) {
+      console.error('Error adding coin to favorites', error);
+    }
   };
 
   return (
@@ -54,7 +76,7 @@ const SearchResultTable: React.FC<SearchResultTableProps> = ({
                     size="2x"
                     color="fff"
                     icon={faHeart}
-                    onClick={() => handleAddToFavorites(coin.id)}
+                    onClick={() => handleAddToFavorites(coin.id, coin.large)}
                   />
                 </td>
               </tr>
