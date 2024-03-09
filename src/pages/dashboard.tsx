@@ -12,7 +12,6 @@ function Dashboard() {
   return (
     <div>
       <DashBoard></DashBoard>
-      {/* <WebSocketExample />       */}
     </div>
   )
 }
