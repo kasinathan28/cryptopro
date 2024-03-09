@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './logOutButton.module.css';
+import style from './logOutbutton.module.css';
 import { useRouter } from 'next/router';
 
 const LogOutButton = () => {
